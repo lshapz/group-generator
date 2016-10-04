@@ -17,6 +17,8 @@ def self.all
   #all students regardless of course 
 end 
 
+
+
 # def all_in_each_course
 #   each_class = @@all.each_with_object({}) {|student, object| object[student.course] = student }
 #   each_class 
