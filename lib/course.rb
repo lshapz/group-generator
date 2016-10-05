@@ -15,7 +15,6 @@ attr_reader :name, :instructors
 
     @student_objects = students.map {|student| Student.new(name: student)}
     student_objects.map {|student| student.course = self}
-    @student_id_name_hash = student_objects.each_with_object({}) {|stud, hash| hash[i+=1] = stud}
     #binding.pry
     @@all << self
     #collects all the flatiron courses ever

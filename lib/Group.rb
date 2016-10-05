@@ -16,15 +16,14 @@ def initialize(number_of_students:, course:)
 end
 
 def who_to_group
-  @course.student_id_name_hash #{1=> Student Object}
+  @course.student_objects # USE THIS INSTEAD
 end
 
 def shuffles
   array_of_groups = []
-  student_ids_array = who_to_group.keys #Array of Student Objects [Zack, Laura, Scott, Krissa , Avi, Adam]
-  random_students = student_ids_array.shuffle #[Laura, Zack, Scott, Krissa , Avi, Adam]
-  random_student_groups = random_students.each_slice(@number_of_students) {|x| array_of_groups << x } #[[Laura, Zack],[Krissa, ],[]]
-  shuffled_groups_by_object = array_of_groups.map! {|num_group| num_group.map {|student_id| who_to_group[student_id]}}
+  random_students = who_to_group.shuffle #random_students = who_to_group.shuffle
+  random_student_groups = random_students.each_slice(@number_of_students) {|x| array_of_groups << x }
+  array_of_groups
 end
 
 def worked_together

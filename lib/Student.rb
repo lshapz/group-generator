@@ -1,6 +1,6 @@
 class Student
 
-attr_accessor :student_group_history, :all, :course
+attr_accessor :student_group_history, :all, :course, :edit_group_history
 attr_reader :name, :course
 
 @@all = []
@@ -17,11 +17,17 @@ def self.all
   #all students regardless of course
 end
 
-def student_group_history
-  # hello = self.name
-  y = @student_group_history
-  # y.delete_if {|z| z == hello }
+# def student_group_history
+#   @edit_group_history
+# end
+
+def edit_group_history
+  edited_history = @student_group_history
+  ## Iterates to get student histories --we need in order to subrtact the student from their own history
+  # group1.shuffles.each {|array| array.each {|new_group| new_group.student_group_history.each {|object| object.each {|name| p name.name}}}}
+
 end
+
 
 
 
